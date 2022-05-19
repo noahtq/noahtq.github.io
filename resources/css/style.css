@@ -1,0 +1,293 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #0D0D0D, #262626);
+    color: #e6e6e6;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Nav Bar */
+
+/* Don't display right side nav elements yet as the functionality isn't available yet */
+.nav-right {
+    display: none;
+}
+
+header {
+    opacity: 0.85;
+    background-color: #262626;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 10;
+    display: flex;
+    align-content: center;
+}
+
+nav {
+    width: 100%;
+    margin: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+nav a {
+    opacity: 1;
+    color: #e6e6e6;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.5s;
+}
+
+nav a:hover {
+    color: #4A5FD9;
+    transition: 0.5s;
+}
+
+nav a:active {
+    color: #0DA633;
+    transition: 0.2s;
+}
+
+nav ul {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 15%;
+}
+
+nav .logo {
+    width: 2rem;
+}
+
+nav .website-notice {
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav .website-notice li{
+    background-color: rgb(194, 21, 21);
+    border-radius: 45%;
+    padding: 1rem;
+}
+
+/* Main */
+
+main {
+    position: relative;
+    top: 5rem;
+    display: grid;
+    grid-template-areas: "banner banner"
+                         "rules bracket-icon"
+                         "pricing-icon pricing"
+                         "mission-statement mission-statement";
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem;
+}
+
+/* Banner */
+
+#banner {
+    grid-area: banner;
+}
+
+#banner video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(70%)
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.overlay-text {
+    z-index: 5;
+    padding: 0 10%;
+    margin: 0;
+    background-color: rgba(74, 95, 217, 0.5);
+    display: grid;
+    grid-auto-rows: 1fr;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.overlay-text .logo {
+    grid-row: 1 / span 1;
+}
+
+.overlay-text img {
+    width: 50px;
+}
+
+.overlay-text .title {
+    grid-row: 2 / span 1;
+}
+
+.overlay-text .subtext {
+    grid-row: 3 / span 1;
+}
+
+.overlay-text h1 {
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+.overlay-text h2 {
+    font-weight: 300;
+}
+
+.overlay-button {
+    display: none; /* Don't display signup button as the functionality doesn't work yet */
+    text-transform: uppercase;
+    z-index: 5;
+    padding: 0.5%;
+    font-size: 1.5rem;
+}
+
+.overlay-button a {
+    padding: 1.5rem;
+    color: #e6e6e6;
+    text-decoration: none;
+    background-color: rgba(22, 24, 23, 0.5);
+}
+
+.overlay-button {
+    filter: brightness(100%);
+    transition: 0.5s;
+}
+
+.overlay-button:hover {
+    filter: brightness(500%);
+    transition: 0.5s;
+}
+
+.overlay-button:active {
+    filter: brightness(50%);
+}
+
+/* Rules */
+
+#rules{
+    grid-area: rules;
+}
+
+#rules h2 {
+    text-align: center;
+}
+
+/* Bracket Icon */
+
+#bracket-icon {
+    grid-area: bracket-icon;
+}
+
+/* Pricing Icon */
+
+#pricing-icon {
+    grid-area: pricing-icon;
+}
+
+/* Pricing */
+
+#pricing {
+    grid-area: pricing;
+}
+
+/* Info */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info img {
+    width: 10rem;
+    filter: invert();
+}
+
+.info li {
+    line-height: 2.5;
+    list-style: none;
+}
+
+/* Mission Statement */
+
+#mission-statement {
+    grid-area: mission-statement;
+    background-color: rgb(255, 255, 255, 0.04);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5%;
+}
+
+#mission-statement img {
+    border-radius: 50%;
+}
+
+#mission-statement h2 {
+    text-align: center;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 3% 0;
+    background-color: #1e1e1e;
+    position: relative;
+    top: 5rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 2% 5%;
+}
+
+footer img {
+    filter: invert()
+}
+

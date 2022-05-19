@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/reset.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/signup.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <title>Weekly Tournaments</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#signup-btn").click(function(e){
+                let jsonData = {};
+
+                var formData = $("#signup-form").serializeArray();
+                //console.log(formData);
+
+                $.each(formData, function () {
+                    if (jsonData[this.name]) {
+                        if (!jsonData[this.name].push) {
+                            jsonData[this.name] = [jsonData[this.name]];
+                        }
+                        jsonData[this.name].push(this.value || '');
+                } else {
+                    jsonData[this.name] = this.value || '';
+                }
+                });
+                console.log(jsonData);
+                $.ajax(
+                    {
+                        url : "action.php",
+                        type: "POST",
+                        data: jsonData,
+                    }
+                );
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="#"><img class="logo" src="../resources/images/WT_Logo_Edited_v001.png" alt=""></a></li>
+                <li><a href="#">Weekly Tournaments</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="signup">
+            <form id="signup-form" type="post">
+                <fieldset>
+                    <div class="elements">
+                        <label for="first-name">First Name:</label>
+                        <input type="text" required="required" name="fname" size="20" />
+                    </div>
+                    <div class="elements">
+                        <label for="last-name">Last Name:</label>
+                        <input type="text" required="required" name="lname" size="20" />
+                    </div>
+                    <div class="elements">
+                        <label id="email" for="email">Email:</label>
+                        <input type="text" required="required" name="email" size="50" />
+                    </div>
+                    <div class="elements">
+                        <label for="phone-number">Phone Number:</label>
+                        <input type="text" required="required" name="pnumber" size="18" />
+                    </div>
+
+                    <div class="submit">
+                        <input type="submit" id="signup-btn" name="signup=btn" class="btn" value="Sign Up" />
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div id="copyright">
+            <h4>Copyright 2022</h4>
+        </div>
+        <div id="contact">
+            <h3>Contact Info</h3>
+            <div>
+                <div class="icon">
+                    <img src="../resources/icons/call_FILL0_wght400_GRAD0_opsz48.png" alt=""><h4>999-999-9999</h4>
+                </div>
+                <div class="icon">
+                    <img src="../resources/icons/mail_FILL0_wght400_GRAD0_opsz48.png" alt=""><h4>weeklytournaments0@gmail.com</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

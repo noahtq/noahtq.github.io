@@ -1,0 +1,50 @@
+main {
+    position: relative;
+    top: 5rem;
+    margin: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-form {
+    padding: 2rem;
+}
+
+.elements {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+#email {
+    padding-right: 1rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
+
+#signup-btn {
+    border: 0px;
+    text-transform: uppercase;
+    z-index: 5;
+    padding: 0.5%;
+    font-size: 1.5rem;
+    filter: brightness(100%);
+    transition: 0.5s;
+    padding: 1.5rem;
+    color: #e6e6e6;
+    text-decoration: none;
+    background-color: rgba(5, 5, 5, 0.5);
+}
+
+#signup-btn:hover {
+    filter: brightness(1000%);
+    transition: 0.5s;
+}
+
+#signup-btn:active {
+    filter: brightness(50%);
+}
